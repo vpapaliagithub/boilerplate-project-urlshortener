@@ -19,6 +19,13 @@ app.get('/api/hello', function(req, res) {
   res.json({ greeting: 'hello API' });
 });
 
+// my first attempt
+const handleReq = (req, res, next) => {
+  console.log("handle request");
+  res.json({ get: 'delete this...' });
+};
+app.get('/api/get', handleReq);
+
 app.listen(port, function() {
   console.log(`Listening on port ${port}`);
 });
